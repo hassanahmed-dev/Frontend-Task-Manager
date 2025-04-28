@@ -1,0 +1,550 @@
+/* Calendar Styles */
+.calendar-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  background-color: #f5f5f5;
+}
+
+.calendar-card {
+  background-color: white !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.calendar-wrapper {
+  background-color: white;
+  padding: 20px;
+}
+
+/* react-big-calendar customizations */
+.rbc-calendar {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  width: 100%;
+}
+
+.rbc-toolbar {
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.rbc-toolbar button {
+  color: #333;
+  border: 1px solid #d9d9d9;
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.rbc-toolbar button:hover {
+  background-color: #f0f0f0;
+  border-color: #d9d9d9;
+  color: #1890ff;
+}
+
+.rbc-toolbar button.rbc-active {
+  background-color: #1890ff;
+  color: white;
+  border-color: #1890ff;
+}
+
+.rbc-toolbar button.rbc-active:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+  color: white;
+}
+
+.rbc-header {
+  padding: 10px 3px;
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.rbc-today {
+  background-color: rgba(24, 144, 255, 0.05);
+}
+
+.rbc-event {
+  border-radius: 4px;
+  padding: 4px 8px;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.rbc-event:hover {
+  opacity: 1 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.rbc-event-label {
+  font-size: 10px;
+  margin-bottom: 2px;
+}
+
+.rbc-event-content {
+  font-weight: 500;
+}
+
+.rbc-show-more {
+  font-size: 12px;
+  color: #1890ff;
+  font-weight: 500;
+  padding: 2px 4px;
+  background-color: rgba(24, 144, 255, 0.05);
+  border-radius: 2px;
+}
+
+.rbc-show-more:hover {
+  background-color: rgba(24, 144, 255, 0.1);
+  color: #096dd9;
+}
+
+.rbc-overlay {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 4px;
+}
+
+.rbc-overlay-header {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 10px;
+  font-weight: 500;
+}
+
+/* Task details modal */
+.event-details h2 {
+  margin-bottom: 16px;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+
+.event-details p {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-icon {
+  color: #1890ff;
+}
+
+.event-description {
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 12px;
+}
+
+.event-description h4 {
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.event-description p {
+  margin-bottom: 0;
+  white-space: pre-line;
+  display: block;
+}
+
+/* Shared styles with Dashboard */
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+.add-task-btn {
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0 16px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.add-task-btn:hover {
+  background-color: #40a9ff;
+}
+
+/* Modal Footer Buttons */
+.modal-footer-btn {
+  border-radius: 6px;
+}
+
+.cancel-btn {
+  margin-right: 8px;
+}
+
+.submit-btn {
+  background-color: #1890ff;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .rbc-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .rbc-toolbar-label {
+    margin: 10px 0;
+  }
+  
+  .rbc-btn-group {
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .add-task-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .rbc-calendar {
+    height: 500px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-header h1 {
+    font-size: 24px;
+  }
+  
+  .rbc-calendar {
+    height: 400px !important;
+  }
+  
+  .rbc-toolbar button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Override Ant Design Calendar Styles */
+.ant-picker-calendar-full .ant-picker-panel .ant-picker-calendar-date-content {
+  height: 80px;
+}
+
+/* Calendar header wrapper */
+.calendar-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-title {
+  margin: 0 !important;
+}
+
+.add-task-button {
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0 16px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.add-task-button:hover {
+  background-color: #40a9ff;
+}
+
+/* White calendar wrapper */
+.white-calendar-wrapper {
+  background-color: white;
+}
+
+.white-calendar-wrapper .ant-picker-calendar {
+  background-color: white !important;
+}
+
+.white-calendar-wrapper .ant-picker-panel {
+  background-color: white !important;
+}
+
+.white-calendar-wrapper .ant-picker-body {
+  background-color: white !important;
+}
+
+.white-calendar-wrapper th {
+  background-color: white !important;
+}
+
+.white-calendar-wrapper td {
+  background-color: white !important;
+}
+
+.white-calendar-wrapper .ant-picker-cell {
+  background-color: white !important;
+}
+
+.view-mode-selector {
+  margin-left: auto;
+}
+
+.view-mode-selector .ant-radio-button-wrapper {
+  height: 32px;
+  line-height: 30px;
+}
+
+/* Ant Calendar Overrides */
+.ant-picker-calendar {
+  font-size: 14px;
+  background-color: white;
+}
+
+.ant-picker-panel {
+  background-color: white !important;
+}
+
+.ant-picker-cell {
+  background-color: white !important;
+}
+
+.ant-picker-cell-in-view {
+  background-color: white !important;
+  color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.ant-picker-calendar-full .ant-picker-panel .ant-picker-cell-in-view {
+  padding: 1px;
+  background-color: white !important;
+}
+
+.ant-picker-content th, 
+.ant-picker-content td {
+  background-color: white !important;
+}
+
+.ant-picker-calendar-full .ant-picker-panel .ant-picker-calendar-date {
+  margin: 0;
+  padding: 2px 6px;
+  border-top: 2px solid #f0f0f0;
+  background-color: white !important;
+}
+
+.ant-picker-cell-inner {
+  background-color: white !important;
+}
+
+.ant-picker-calendar-full .ant-picker-panel .ant-picker-calendar-date-value {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.ant-picker-calendar-date-content {
+  background-color: white !important;
+}
+
+/* Events styling */
+.events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.events li {
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.events li:hover {
+  transform: translateX(2px);
+}
+
+/* Event styling */
+.event {
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  border-left: 3px solid;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.event:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.event-badge {
+  font-size: 12px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  padding: 2px 4px;
+  border-radius: 2px;
+  transition: background-color 0.2s;
+}
+
+.event-badge span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Event type colors */
+.event-meeting {
+  background-color: rgba(24, 144, 255, 0.15);
+  border-left: 3px solid #1890ff;
+}
+
+.event-meeting:hover {
+  background-color: rgba(24, 144, 255, 0.25);
+}
+
+.event-personal {
+  background-color: rgba(82, 196, 26, 0.15);
+  border-left: 3px solid #52c41a;
+}
+
+.event-personal:hover {
+  background-color: rgba(82, 196, 26, 0.25);
+}
+
+.event-work {
+  background-color: rgba(245, 34, 45, 0.15);
+  border-left: 3px solid #f5222d;
+}
+
+.event-work:hover {
+  background-color: rgba(245, 34, 45, 0.25);
+}
+
+.event-deadline {
+  background-color: rgba(245, 34, 45, 0.15);
+  border-left: 3px solid #f5222d;
+}
+
+.event-deadline:hover {
+  background-color: rgba(245, 34, 45, 0.25);
+}
+
+.event-reminder {
+  background-color: rgba(250, 173, 20, 0.15);
+  border-left: 3px solid #faad14;
+}
+
+.event-reminder:hover {
+  background-color: rgba(250, 173, 20, 0.25);
+}
+
+.event-other {
+  background-color: rgba(114, 46, 209, 0.15);
+  border-left: 3px solid #722ed1;
+}
+
+.event-other:hover {
+  background-color: rgba(114, 46, 209, 0.25);
+}
+
+/* Calendar day cell hover effect */
+.ant-picker-cell:hover .ant-picker-cell-inner {
+  background-color: rgba(24, 144, 255, 0.1) !important;
+}
+
+/* Active day highlight */
+.ant-picker-cell-selected .ant-picker-cell-inner {
+  background-color: #1890ff !important;
+  color: white !important;
+}
+
+/* Modal and form styling */
+.ant-modal-header {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 24px;
+}
+
+.ant-modal-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.ant-form-item-label > label {
+  font-weight: 500;
+}
+
+.ant-picker {
+  width: 100%;
+}
+
+/* Today's date highlight */
+.ant-picker-cell-today .ant-picker-cell-inner {
+  border: 1px solid #1890ff !important;
+}
+
+/* Ensure vertical scroll within the calendar for many events */
+.ant-picker-cell-inner {
+  height: auto !important;
+  min-height: 24px;
+}
+
+.ant-picker-calendar-date-content {
+  max-height: 80px;
+  overflow-y: auto;
+}
+
+/* Tooltip styling */
+.ant-tooltip-inner {
+  min-width: 150px;
+}
+

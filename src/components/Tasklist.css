@@ -1,0 +1,296 @@
+.tasklist-container {
+  margin: 30px auto;
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  animation: fadeInUp 0.6s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Slight lift and deeper shadow on hover */
+.tasklist-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styles */
+.tasklist-container .ant-table {
+  border-radius: 8px;
+  overflow-x: auto; /* Ensures horizontal scrolling on small screens */
+}
+
+.tasklist-container .ant-table-wrapper {
+  overflow-x: auto;
+}
+
+.tasklist-container .ant-table-thead > tr > th {
+  background-color: #f7f9fc;
+  font-weight: 900;
+  color: #333;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+/* Make sure all columns have proper padding */
+.tasklist-container .ant-table-cell {
+  padding: 16px 12px;
+}
+
+/* Row hover styles - customize or disable hover effect */
+.tasklist-container .ant-table-tbody > tr:hover > td {
+  background-color: #d9ebfb !important; /* Light blue hover color */
+}
+
+
+/* Task content styles */
+.task-title {
+  font-weight: 500;
+  color: #1f2937;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.task-description {
+  font-size: 16px;
+  color: #6b7280;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  white-space: pre-line; /* Preserves line breaks in descriptions */
+  overflow-wrap: break-word; /* Handles very long words */
+}
+
+/* Task details styling */
+.task-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.task-detail-item .anticon {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Tag styles */
+.tasklist-container .ant-tag {
+  padding: 2px 8px;
+  margin-right: 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Button styles */
+.complete-btn {
+  background-color: #52c41a;
+  border-color: #52c41a;
+}
+
+.complete-btn:hover {
+  background-color: #3daa0b;
+  border-color: #3daa0b;
+}
+
+.edit-btn {
+  color: #1890ff;
+  border-color: #1890ff;
+}
+
+.edit-btn:hover {
+  color: #096dd9;
+  border-color: #096dd9;
+}
+
+.delete-btn {
+  color: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
+.delete-btn:hover {
+  color: #f5222d;
+  border-color: #f5222d;
+}
+
+/* Read More button styles */
+.read-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+.read-more-button {
+  min-width: 150px;
+  font-weight: 500;
+  background: #1890ff;
+  border-color: #1890ff;
+  transition: all 0.3s ease;
+}
+
+.read-more-button:hover {
+  background: #40a9ff;
+  border-color: #40a9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.3);
+}
+
+/* Mobile card styles */
+.task-list-mobile {
+  width: 100%;
+}
+
+.task-card {
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-top: 3px solid #1890ff;
+}
+
+.completed-card {
+  border-top-color: #52c41a;
+  background-color: #f6ffed;
+}
+
+.task-content {
+  margin-bottom: 16px;
+}
+
+.task-info {
+  margin-top: 12px;
+}
+
+.task-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.task-tags .ant-tag {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.task-date {
+  color: #6b7280;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.task-card-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.task-card-actions .ant-btn {
+  flex: 1;
+  min-width: 90px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .tasklist-container {
+    padding: 15px;
+  }
+  
+  .ant-table {
+    font-size: 13px;
+  }
+  
+  .task-details {
+    gap: 4px;
+  }
+  
+  .ant-btn {
+    padding: 0 8px;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  /* Ensure columns don't get too small on mobile */
+  .tasklist-container .ant-table-cell {
+    padding: 12px 6px;
+    min-width: 80px;
+  }
+  
+  /* Make action buttons stack vertically on mobile */
+  .tasklist-container .ant-space-vertical {
+    width: 100%;
+  }
+  
+  /* Force Space component to be vertical on mobile */
+  .tasklist-container .ant-table-cell:last-child .ant-space {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  
+  /* Add more space between buttons when stacked */
+  .tasklist-container .ant-table-cell:last-child .ant-space .ant-space-item {
+    margin-right: 0 !important;
+    margin-bottom: 8px !important;
+    width: 100%;
+  }
+  
+  /* Make buttons full width when stacked */
+  .tasklist-container .ant-table-cell:last-child .ant-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Card styles for mobile */
+  .task-card {
+    padding: 16px;
+  }
+  
+  .task-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .task-description {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  
+  .task-card-actions {
+    flex-direction: column;
+  }
+  
+  .task-card-actions .ant-btn {
+    width: 100%;
+    margin-bottom: 8px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .task-card-actions .ant-btn:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Fade-in animation for task list container */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
