@@ -11,6 +11,7 @@ const ForgotPassword = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [resetUrl, setResetUrl] = useState(null);
   const [success, setSuccess] = useState(false);
 
   // onFinish function to handle form submission
@@ -18,6 +19,7 @@ const ForgotPassword = () => {
     try {
       setLoading(true); // Start loading
       setError(null); // Reset error state
+      setResetUrl(null); // Reset URL state
 
       // Use import.meta.env for Vite
       const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
@@ -33,8 +35,17 @@ const ForgotPassword = () => {
 
       if (res.status === 200) {
         setSuccess(true);
+        
+        // For development testing
+        if (res.data.resetUrl) {
+          setResetUrl(res.data.resetUrl);
+        }
+        
         message.success("Password reset link sent to your email!");
-        setTimeout(() => navigate("/login"), 3000);
+        // Don't navigate away immediately so they can see the URL for testing
+        if (!res.data.resetUrl) {
+          setTimeout(() => navigate("/login"), 3000);
+        }
       } else {
         // If something goes wrong with the response
         setError("Something went wrong. Please try again.");
@@ -77,7 +88,15 @@ const ForgotPassword = () => {
       {/* Show success message */}
       {success && (
         <div className="auth-success">
-          <Text type="success">Password reset link has been sent to your email!</Text>
+          <Text type="success">Password reset link has been sent!</Text>
+          
+          {/* Only show reset URL in development environment */}
+          {resetUrl && (
+            <div className="dev-info">
+              <p>Development Mode: Use this link to reset your password:</p>
+              <a href={resetUrl} target="_blank" rel="noopener noreferrer">{resetUrl}</a>
+            </div>
+          )}
         </div>
       )}
 
