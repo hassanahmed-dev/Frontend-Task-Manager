@@ -17,7 +17,7 @@ const Calendar = () => {
   const [tasks, setTasks] = useState([]);
 
   const localizer = momentLocalizer(moment);
-  const API_URL = import.meta.env.VITE_API_URL || 'https://hassanahmedtaskmanager.up.railway.app';
+  const API_URL = import.meta.env.VITE_API_URL || 'https://backend-task-manager-production.up.railway.app';
 
   useEffect(() => {
     const token = localStorage.getItem('token');
