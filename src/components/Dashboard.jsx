@@ -20,7 +20,7 @@ const Dashboard = () => {
   const [selectedTask, setSelectedTask] = useState(null)
   const [isEditMode, setIsEditMode] = useState(false)
   
-  const API_URL = import.meta.env.VITE_API_URL || 'https://hassanahmedtaskmanager.railway.internal';
+  const API_URL = import.meta.env.VITE_API_URL || 'https://hassanahmedtaskmanager.up.railway.app';
 
   // Check for authentication on component mount
   useEffect(() => {

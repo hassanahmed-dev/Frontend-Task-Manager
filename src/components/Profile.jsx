@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
 import "./Profile.css";
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://hassanahmedtaskmanager.railway.internal';
+const API_URL = import.meta.env.VITE_API_URL || 'https://hassanahmedtaskmanager.up.railway.app';
 const DEFAULT_AVATAR = '/defult.png';
 
 const Profile = () => {
