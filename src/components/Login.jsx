@@ -32,7 +32,7 @@ const Login = () => {
     } catch (err) {
       const errorMessage = err.response?.data?.message || 
                          err.response?.data?.error || 
-                         "Login failed. Please try again.";
+                         "Login.. failed. Please try again.";
       console.error("Login error:", err);
       setError(errorMessage);
       message.error(errorMessage);
