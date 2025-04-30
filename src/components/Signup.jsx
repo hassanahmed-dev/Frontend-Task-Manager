@@ -17,7 +17,7 @@ const Signup = () => {
       setLoading(true);
       setError(null);
       
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const apiUrl = import.meta.env.VITE_API_URL;
 
       const response = await axios.post(`${apiUrl}/api/auth/signup`, values);
       

@@ -20,7 +20,7 @@ const ForgotPassword = () => {
       setError(null); // Reset error state
 
       // Use import.meta.env for Vite
-      const apiUrl = import.meta.env.VITE_API_URL || 'https://hassanahmedtaskmanager.up.railway.app';
+      const apiUrl = import.meta.env.VITE_API_URL;
 
       if (!apiUrl) {
         // Handle missing API URL
