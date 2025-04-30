@@ -17,7 +17,7 @@ const Signup = () => {
       setLoading(true);
       setError(null);
       
-      const apiUrl = import.meta.env.VITE_API_URL || 'https://hassanahmedtaskmanager.up.railway.app';
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://hassanahmedtaskmanager.railway.internal';
 
       const response = await axios.post(`${apiUrl}/api/auth/signup`, values);
       
