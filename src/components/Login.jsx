@@ -17,7 +17,7 @@ const Login = () => {
       setLoading(true);
       setError(null);
       
-      const apiUrl = import.meta.env.VITE_API_URL;
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://hassanahmedtaskmanager.up.railway.app';
       
       const res = await axios.post(`${apiUrl}/api/auth/login`, values);
       
@@ -32,7 +32,7 @@ const Login = () => {
     } catch (err) {
       const errorMessage = err.response?.data?.message || 
                          err.response?.data?.error || 
-                         "Login.. failed. Please try again.";
+                         "Login failed. Please try again.";
       console.error("Login error:", err);
       setError(errorMessage);
       message.error(errorMessage);
