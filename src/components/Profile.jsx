@@ -30,7 +30,7 @@ import "./Profile.css";
 const { Option } = Select;
 const { TextArea } = Input;
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || 'https://backend-task-manager-production.up.railway.app';
 const DEFAULT_AVATAR = '/defult.png';
 
 const Profile = () => {
